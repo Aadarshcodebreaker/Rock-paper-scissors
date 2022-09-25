@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper scissors</title>
+</head>
+<body>
+          <h1 class="hy">Player 1</h1>
+          <h1 class="hh">Player 2</h1>
+          <img src="" alt="" class="img1">
+          <img src="" alt="" class="img2">
+
+          <button class="btn" onclick="player1()">Click</button>
+          <h1 class="result"></h1>
+   <script>
+
+   
+     let image1 = document.querySelector(".img1");
+     let image2 = document.querySelector(".img2");
+     var message = document.querySelector(".result")
+
+    var rock = "https://tse3.mm.bing.net/th?id=OIP.zGj8pKQ349npj0SOu0NgsQHaEY&pid=Api&P=0"
+    var scissors = "https://tse2.mm.bing.net/th?id=OIP.dBAq5EaEhF03y28-_0H5sQHaD9&pid=Api&P=0"
+    var paper = "https://tse4.mm.bing.net/th?id=OIP.-5wmqL3_LRl-vrzyPIswKgHaKg&pid=Api&P=0"
+
+       function player1(){
+        
+   var math = Math.floor(Math.random()*4)
+   var math2 = Math.floor(Math.random()*4)
+        if(math===1 && math2>math){
+            image1.setAttribute("src",paper)
+            image2.setAttribute("src",scissors)
+              message.innerHTML = "Player 2 wins!"
+              console.log(math,math2)
+        }
+       else if(math === 2 && math>math2){
+        image1.setAttribute("src",scissors)
+            image2.setAttribute("src",paper)
+              message.innerHTML = "Player 1 wins!"
+       }
+       else if(math === 3 && math>math2){
+        image1.setAttribute("src",rock)
+            image2.setAttribute("src",scissors)
+              message.innerHTML = "Player 1 wins!"
+       }
+       else if(math === 1 && math2 === 3){
+        image1.setAttribute("src",paper)
+            image2.setAttribute("src",rock)
+              message.innerHTML = "Player 1 wins!"
+       }
+       else if(math2 ===2 && math ===1){
+        image1.setAttribute("src",paper)
+            image2.setAttribute("src",scissors)
+              message.innerHTML = "Player 2 wins!"
+       }
+       else if(math2 === 3 && math === 2){
+        image1.setAttribute("src",scissors)
+            image2.setAttribute("src",rock)
+              message.innerHTML = "Player 2 wins!"
+       }
+       else if(math === math2){
+        image1.setAttribute("src",scissors)
+            image2.setAttribute("src",scissors)
+              message.innerHTML = "DRAW"
+       }
+     
+              
+       }
+   
+
+      
+
+   </script>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            color: white;
+            font-family:  'Arial Narrow Bold';
+            font-style: bold;
+        }
+        .hy{
+            position: absolute;
+            top: 20%;
+            left: 20%;
+
+        }
+        .hh{
+            position: absolute;
+            top: 20%;
+            left: 60%;
+
+        }
+        .img1{
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 45%;
+            left: 17%;
+
+        }
+        .img2{
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 45%;
+            left: 58%;
+
+        }
+        .btn{
+            height: 50px;
+            width: 100px;
+            position: absolute;
+            top: 75%;
+            left: 40%;
+
+        }
+        .result{
+            position: absolute;
+            top: 90%;
+            left: 40%;
+        }
+        @media  screen and (max-width:1000px){
+         .img1{
+            left: 5%;
+         }
+        }
+    </style>
+</body>
+</html>
